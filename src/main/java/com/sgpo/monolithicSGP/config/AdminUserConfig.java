@@ -28,6 +28,7 @@ public class AdminUserConfig implements CommandLineRunner {
     @Transactional
     public void run(String... args) throws Exception {
         var roleAdmin =  rolesRepository.findByName(Role.Values.Admin.name());
+        //var roleAdmin = rolesRepository.findByName(Role.Values.Admin.name());
         var userAdmin = userRepository.findByEmail("admin@gmail.com");
         userAdmin.ifPresentOrElse(
                 user -> {
